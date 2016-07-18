@@ -1,11 +1,11 @@
 from . import main
 from flask import g,render_template,flash,session,abort,request,redirect,url_for
-from ..models import connect_db,init_db
+from ..models import connect_db
 from runapp import app
+
 
 @main.before_request
 def before_request():
-    init_db()
     g.db = connect_db()
 
 
